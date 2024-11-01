@@ -16,11 +16,12 @@ class Matrix{
 };
 
 void Matrix::readFromStdin(){
-    //atoi(char arr)
     cout << "Enter individual elements of array: " << endl;
     for(int i = 0; i < SIZE; i++){
         for(int j = 0; j < SIZE; j++){
-            cin >> data[i][j];
+            char element[10];
+            cin >> element;
+            data[i][j] = atoi(element);
         }
     }
 }
