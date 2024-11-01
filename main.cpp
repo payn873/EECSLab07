@@ -10,7 +10,23 @@ class Matrix{
     public:
         void readFromStdin();
         void display() const;
-        //Matrix operator+(const Matrix& other) const;
+        Matrix operator+(const Matrix& other) const{
+		Matrix ms;
+		int sum1;
+		int sum2;
+		int sumM;
+		for(int i = 0; i < SIZE; i++){
+			for(int j = 0; j < SIZE; j++){
+				sum1 = this->data[i][j];
+				sum2 = other.data[i][j];
+				sumM = sum1 + sum2;
+				ms.data[i][j] = sumM;
+			}
+		}
+		ms.display();
+		return ms;
+	}
+
         //int sumOfDiagonals() const;
         //void swapRows(int row1, int row2);
 };
@@ -35,12 +51,13 @@ void Matrix::display() const{
 	}
 }
 
+
 int main(){
     Matrix m1;
     Matrix m2;
     cout << "Enter numbers for matrix 1: " << endl;
     m1.readFromStdin();
-    m1.display();
-    //cout << "Enter numbers for matrix 2: " << endl;
-    //m2.readFromStdin();
+    cout << "Enter numbers for matrix 2: " << endl;
+    m2.readFromStdin();
+    m1 + m2;
 }
