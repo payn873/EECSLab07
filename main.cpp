@@ -27,6 +27,22 @@ class Matrix{
 		return ms;
 	}
 
+	Matrix operator*(const Matrix& other) const{
+		Matrix mp;
+		int pM = 0;
+		for(int i = 0; i < SIZE; i++){
+			for(int j = 0; j < SIZE; j++){
+				for(int k = 0; k < SIZE; k++){
+					pM += this->data[i][k] * other.data[k][j];
+				}
+				mp.data[i][j] = pM;
+				pM = 0;
+			}
+		}
+		mp.display();
+		return mp;
+	}
+
         //int sumOfDiagonals() const;
         //void swapRows(int row1, int row2);
 };
@@ -59,5 +75,5 @@ int main(){
     m1.readFromStdin();
     cout << "Enter numbers for matrix 2: " << endl;
     m2.readFromStdin();
-    m1 + m2;
+    m1 * m2;
 }
