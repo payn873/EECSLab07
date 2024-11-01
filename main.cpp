@@ -43,9 +43,17 @@ class Matrix{
 		return mp;
 	}
 
-        //int sumOfDiagonals() const;
+        int sumOfDiagonals() const;
         //void swapRows(int row1, int row2);
 };
+
+int Matrix::sumOfDiagonals() const{
+	int sum = 0;
+	for(int i = 0; i < SIZE; i++){
+		sum += data[i][i];
+	}
+	return sum;
+}
 
 void Matrix::readFromStdin(){
     cout << "Enter individual elements of array: " << endl;
@@ -75,5 +83,4 @@ int main(){
     m1.readFromStdin();
     cout << "Enter numbers for matrix 2: " << endl;
     m2.readFromStdin();
-    m1 * m2;
 }
