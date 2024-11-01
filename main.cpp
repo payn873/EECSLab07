@@ -9,7 +9,7 @@ class Matrix{
     
     public:
         void readFromStdin();
-        //void display() const;
+        void display() const;
         //Matrix operator+(const Matrix& other) const;
         //int sumOfDiagonals() const;
         //void swapRows(int row1, int row2);
@@ -26,11 +26,21 @@ void Matrix::readFromStdin(){
     }
 }
 
+void Matrix::display() const{
+	for(int i = 0; i < SIZE; i++){
+		for(int j = 0; j < SIZE; j++){
+			cout << data[i][j] << " ";
+		}
+		cout << endl;
+	}
+}
+
 int main(){
     Matrix m1;
     Matrix m2;
     cout << "Enter numbers for matrix 1: " << endl;
     m1.readFromStdin();
-    cout << "Enter numbers for matrix 2: " << endl;
-    m2.readFromStdin();
+    m1.display();
+    //cout << "Enter numbers for matrix 2: " << endl;
+    //m2.readFromStdin();
 }
