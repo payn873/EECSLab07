@@ -44,8 +44,20 @@ class Matrix{
 	}
 
         int sumOfDiagonals() const;
-        //void swapRows(int row1, int row2);
+        void swapRows(int row1, int row2);
 };
+
+void Matrix::swapRows(int row1, int row2){
+	if(row1 < SIZE && row2 < SIZE){
+		int temp[SIZE];
+		for(int i = 0; i < SIZE; i++){
+			temp[i] = data[row1][i];
+			data[row1][i]  = data[row2][i];
+			data[row2][i] = temp[i];
+		}
+	}
+	display();
+}
 
 int Matrix::sumOfDiagonals() const{
 	int sum = 0;
@@ -81,6 +93,7 @@ int main(){
     Matrix m2;
     cout << "Enter numbers for matrix 1: " << endl;
     m1.readFromStdin();
-    cout << "Enter numbers for matrix 2: " << endl;
-    m2.readFromStdin();
+    //cout << "Enter numbers for matrix 2: " << endl;
+    //m2.readFromStdin();
+    m1.swapRows(0,1);
 }
