@@ -93,7 +93,18 @@ int main(){
     Matrix m2;
     cout << "Enter numbers for matrix 1: " << endl;
     m1.readFromStdin();
-    //cout << "Enter numbers for matrix 2: " << endl;
-    //m2.readFromStdin();
+    m1.display();
+    cout << "Enter numbers for matrix 2: " << endl;
+    m2.readFromStdin();
+    m2.display();
+    cout << "Sum of Matrix 1 and Matrix 2: " << endl;
+    m1 + m2;
+    cout << "Product of Matrix 1 and Matrix 2: " << endl;
+    m1 * m2;
+    cout << "Sum of Diagonals of Matrix 1: " << m1.sumOfDiagonals() << endl;
+    cout << "Sum of Diagonals of Matrix 2: " << m2.sumOfDiagonals() << endl;
+    cout << "Swaping Rows of Index 0 and 1 of Matrix 1: " << endl;
     m1.swapRows(0,1);
+    cout << "Swaping Rows of Index 3 and 1 of Matrix 2: " << endl;
+    m2.swapRows(3,1);
 }
